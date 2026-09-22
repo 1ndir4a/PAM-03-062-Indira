@@ -35,7 +35,7 @@ import androidx.navigation.NavController
 
 @Composable
 fun AvatarScreen(navController: NavController) {
-    // State untuk tiap komponen wajah, defaultnya semua tampil (checked)
+
     var showBrow by remember { mutableStateOf(true) }
     var showEye by remember { mutableStateOf(true) }
     var showNose by remember { mutableStateOf(true) }
@@ -73,100 +73,63 @@ fun AvatarScreen(navController: NavController) {
             Box(
                 modifier = Modifier.size(
                     width = faceDisplayWidth,
-                    height = faceDisplayHeight
-                ),
+                    height = faceDisplayHeight),
                 contentAlignment = Alignment.Center
             ) {
-
-                // =========================
                 // WAJAH
-                // =========================
                 Image(
-                    painter = painterResource(
-                        id = R.drawable.face_0004
-                    ),
+                    painter = painterResource(id = R.drawable.face_0004),
                     contentDescription = "Wajah dasar",
                     modifier = Modifier
                         .matchParentSize()
                         .offset(y = (-20).dp)
                 )
-                // =========================
                 // ALIS
-                // =========================
                 if (showBrow) {
                     Image(
-                        painter = painterResource(
-                            id = R.drawable.face_0001
-                        ),
+                        painter = painterResource(id = R.drawable.face_0001),
                         contentDescription = "Alis",
                         modifier = Modifier
                             .size(
-                                width = faceDisplayWidth *
-                                        (597f / faceWidthPx),
-                                height = faceDisplayWidth *
-                                        (59f / faceWidthPx)
-                            )
-                            .offset(y = (-55).dp)
+                                width = faceDisplayWidth * (597f / faceWidthPx),
+                                height = faceDisplayWidth * (59f / faceWidthPx)
+                            ).offset(y = (-55).dp)
                     )
                 }
-
-                // =========================
                 // MATA
-                // =========================
                 if (showEye) {
                     Image(
-                        painter = painterResource(
-                            id = R.drawable.face_0003
-                        ),
+                        painter = painterResource(id = R.drawable.face_0003),
                         contentDescription = "Mata",
                         modifier = Modifier
                             .size(
-                                width = faceDisplayWidth *
-                                        (601f / faceWidthPx),
-                                height = faceDisplayWidth *
-                                        (174f / faceWidthPx)
-                            )
-                            .offset(x = -1.dp, y = (-30).dp)
+                                width = faceDisplayWidth * (601f / faceWidthPx),
+                                height = faceDisplayWidth * (174f / faceWidthPx)
+                            ).offset(x = -1.dp, y = (-30).dp)
                     )
                 }
-
-
-                // =========================
                 // HIDUNG
-                // =========================
                 if (showNose) {
                     Image(
-                        painter = painterResource(
-                            id = R.drawable.face_0002
-                        ),
+                        painter = painterResource(id = R.drawable.face_0002 ),
                         contentDescription = "Hidung",
                         modifier = Modifier
                             .size(
-                                width = faceDisplayWidth *
-                                        (181f / faceWidthPx),
-                                height = faceDisplayWidth *
-                                        (125f / faceWidthPx)
-                            )
-                            .offset(y = 0.dp)
+                                width = faceDisplayWidth * (181f / faceWidthPx),
+                                height = faceDisplayWidth * (125f / faceWidthPx)
+                            ).offset(y = 0.dp)
                     )
                 }
-                // =========================
                 // MULUT
-                // =========================
                 if (showMouth) {
                     Image(
-                        painter = painterResource(
-                            id = R.drawable.face_0000
-                        ),
+                        painter = painterResource(id = R.drawable.face_0000 ),
                         contentDescription = "Mulut",
                         modifier = Modifier
                             .size(
-                                width = faceDisplayWidth *
-                                        (237f / faceWidthPx),
-                                height = faceDisplayWidth *
-                                        (137f / faceWidthPx)
-                            )
-                            .offset(y = 40.dp)
+                                width = faceDisplayWidth * (237f / faceWidthPx),
+                                height = faceDisplayWidth * (137f / faceWidthPx)
+                            ).offset(y = 40.dp)
                     )
                 }
             }
@@ -181,7 +144,6 @@ fun AvatarScreen(navController: NavController) {
                 .fillMaxWidth()
                 .padding(top = 15.dp)
         )
-        // ---- Baris checkbox ----
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
