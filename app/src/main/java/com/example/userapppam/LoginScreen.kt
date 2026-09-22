@@ -109,8 +109,6 @@ fun LoginScreen(navController: NavController) {
                     ),
                     modifier = Modifier.fillMaxWidth().height(52.dp)
                 )
-
-                // ---- Lupa Password ----
                 Text(
                     text = "Lupa Password?",
                     color = AppColors.LinkText,
@@ -163,7 +161,6 @@ fun LoginScreen(navController: NavController) {
         }
     }
 
-    // ---- Dialog Lupa Password ----
     if (showForgotDialog) {
         AlertDialog(
             onDismissRequest = { showForgotDialog = false },
